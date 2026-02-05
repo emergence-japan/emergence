@@ -2,9 +2,7 @@
 
 ## フェーズ 1: フォームの設計とバリデーション実装
 - [x] Task: フォームバリデーション用スキーマ (schema.ts) の作成 d933b97
-- [ ] Task: お問い合わせフォームコンポーネント (ContactForm) の作成
-    - [ ] ユニットテストの作成（必須チェック、エラー表示の検証）
-    - [ ] React Hook Form を用いたフォームの実装（スタイル・アニメーション含む）
+- [x] Task: お問い合わせフォームコンポーネント (ContactForm) の作成 de50423
 - [ ] Task: Conductor - User Manual Verification 'フェーズ 1: フォーム実装' (Protocol in workflow.md)
 
 ## フェーズ 2: 送信演出とトップページ統合
