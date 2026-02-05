@@ -25,12 +25,33 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
-    // Simulate API call
-    console.log('Form data:', data)
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setSubmitted(true)
-    if (onSuccess) onSuccess()
+    
+    try {
+      const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
+      
+      if (!endpoint || endpoint.includes('xxxx')) {
+        // Fallback for development if endpoint is not set
+        console.log('GAS Endpoint not configured. Form data:', data)
+        await new Promise(resolve => setTimeout(resolve, 1500))
+      } else {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          mode: 'no-cors', // GAS requires no-cors for simple web app triggers
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+      }
+      
+      setIsSubmitting(false)
+      setSubmitted(true)
+      if (onSuccess) onSuccess()
+    } catch (error) {
+      console.error('Submission failed:', error)
+      alert('送信に失敗しました。時間をおいて再度お試しいただくか、お電話にてご連絡ください。')
+      setIsSubmitting(false)
+    }
   }
 
   if (submitted) {
