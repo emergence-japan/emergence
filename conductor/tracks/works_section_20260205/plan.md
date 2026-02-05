@@ -2,10 +2,8 @@
 
 ## フェーズ 1: コンポーネントの設計と実装
 - [x] Task: 実績詳細モーダル (WorksModal) の作成 e672938
-- [ ] Task: 実績カード (WorksCard) の作成
-    - [ ] ユニットテストの作成（ホバー演出、クリック時のコールバック確認）
-    - [ ] `WorksCard` コンポーネントの実装（ズーム効果、オーバーレイ表示）
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
+- [x] Task: 実績カード (WorksCard) の作成 0a985f0
+- [~] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
 
 ## フェーズ 2: セクション統合と全体調整
 - [ ] Task: 実績ギャラリーセクション (WorksSection) の作成とトップページへの統合
