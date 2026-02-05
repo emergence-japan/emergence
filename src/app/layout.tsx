@@ -15,8 +15,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Emergence-Japan LLC | Innovating the Future",
-  description: "Emergence-Japan LLC の公式コーポレートサイト。Next.jsとThree.jsを駆使した革新的なWeb体験を提供します。",
+  title: "Emergence-Japan LLC | 生成AIソリューション・DXコンサルティング・人材育成",
+  description: "2017年設立。Emergence-Japan LLCは、東京大学情報学環藤本研究室への技術サポート実績を持つAI・DXの専門集団です。生成AI活用からWebアプリ開発、実務に即した人材育成まで、教養と技術を融合させた革新的なソリューションで貴社の未来を創出します。",
+  keywords: ["生成AI", "AI開発", "DXコンサルティング", "人材育成", "Webアプリ開発", "思考力", "教養", "大阪 AI企業", "エマージェンス・ジャパン"],
+  authors: [{ name: "Emergence-Japan LLC" }],
+  openGraph: {
+    title: "Emergence-Japan LLC | テクノロジーの力で新たな可能性を。",
+    description: "AIと教養を融合させた独自の視点で、企業の変革を支援する Emergence-Japan LLC の公式サイトです。",
+    url: "https://emergence-japan.com", // 適切なURLに後で変更可能
+    siteName: "Emergence-Japan LLC",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emergence-Japan LLC | 生成AI・DXの専門集団",
+    description: "教養と技術を融合させた革新的なソリューションで貴社の未来を創出します。",
+  },
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
