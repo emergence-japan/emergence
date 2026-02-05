@@ -5,7 +5,7 @@
 - [x] Task: サービスグリッドセクション (ServicesSection) の作成 11b80f3
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' 6aa32cd (Protocol in workflow.md)
 
-## フェーズ 2: トップページへの統合と調整
+## フェーズ 2: トップページへの統合と調整 [checkpoint: 59fd5cb]
 - [x] Task: `ServicesSection` を src/app/page.tsx に追加 6aa32cd
     - [ ] 既存セクション（Hero, News）との位置関係と余白の調整
 - [x] Task: レスポンシブ表示の最終確認（モバイル・タブレット対応） 3054b86
