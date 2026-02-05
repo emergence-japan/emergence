@@ -7,7 +7,7 @@ const newsData = [
     id: 1,
     date: '2026.02.05',
     category: 'Information',
-    title: 'Emergence-japan合同会社のコーポレートサイトを公開いたしました。',
+    title: 'Emergence-Japan LLC のコーポレートサイトを公開いたしました。',
   },
   {
     id: 2,

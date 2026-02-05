@@ -49,7 +49,7 @@ export default function Home() {
           className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10"
           variants={itemVariants}
         >
-          Emergence-japan合同会社は、次世代のテクノロジーで、ビジネスに革新的な価値を提供します。
+          Emergence-Japan LLC は、次世代のテクノロジーで、ビジネスに革新的な価値を提供します。
         </motion.p>
         
         <motion.div 

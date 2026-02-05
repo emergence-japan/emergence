@@ -15,4 +15,4 @@
 ## フェーズ 3: コンテンツセクションの実装
 - [x] Task: ニュース・お知らせセクションのリスト表示実装 5c9f3de
 - [x] Task: 全体的なスクロールアニメーション (Fade-in / Parallax) の調整 d99a559
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 3: コンテンツ実装' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'フェーズ 3: コンテンツ実装' (Protocol in workflow.md)

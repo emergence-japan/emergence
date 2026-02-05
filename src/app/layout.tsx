@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Emergence-japan合同会社 | Innovating the Future",
-  description: "Emergence-japan合同会社の公式コーポレートサイト。Next.jsとThree.jsを駆使した革新的なWeb体験を提供します。",
+  title: "Emergence-Japan LLC | Innovating the Future",
+  description: "Emergence-Japan LLC の公式コーポレートサイト。Next.jsとThree.jsを駆使した革新的なWeb体験を提供します。",
 };
 
 export default function RootLayout({
