@@ -11,7 +11,7 @@ const worksData = [
     category: 'AI Solution',
     description: '最先端のメディア学習研究を支援するため、AIの高度な活用方法に関する技術サポートおよびコンサルティングを提供。',
     client: '東京大学 大学院情報学環 藤本研究室',
-    imageUrl: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: '/works/tokyoU.png'
   },
   {
     title: '介護施設向けラーニングマネジメントシステム (LMS) のリリース',
