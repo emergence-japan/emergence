@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import HeroScene from "@/components/HeroScene";
 import CTAButton from "@/components/CTAButton";
 import NewsSection from "@/components/NewsSection";
+import ServicesSection from "@/components/ServicesSection";
 
 export default function Home() {
   const containerVariants = {
@@ -64,6 +65,8 @@ export default function Home() {
           </CTAButton>
         </motion.div>
       </motion.div>
+
+      <ServicesSection />
 
       <NewsSection />
     </div>
