@@ -2,10 +2,8 @@
 
 ## フェーズ 1: コンポーネントの実装
 - [x] Task: 会社基本情報テーブル (CompanyInfoTable) の作成 cc75628
-- [~] Task: 代表メッセージコンポーネント (CEOSection) の作成
-    - [ ] ユニットテストの作成（写真とテキストの配置確認）
-    - [ ] `CEOSection` コンポーネントの実装
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
+- [x] Task: 代表メッセージコンポーネント (CEOSection) の作成 771b6ff
+- [~] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
 
 ## フェーズ 2: トップページへの統合と全体調整
 - [ ] Task: `AboutSection` として全要素をまとめ、src/app/page.tsx に追加
