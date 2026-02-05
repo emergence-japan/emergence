@@ -12,7 +12,7 @@
 - [x] Task: コンバージョンに導く「お問い合わせ」ボタンのインタラクション実装 6c6ba8e
 - [x] Task: Conductor - User Manual Verification 'フェーズ 2: ヒーローエリア' a771bc9 (Protocol in workflow.md)
 
-## フェーズ 3: コンテンツセクションの実装
+## フェーズ 3: コンテンツセクションの実装 [checkpoint: e045b35]
 - [x] Task: ニュース・お知らせセクションのリスト表示実装 5c9f3de
 - [x] Task: 全体的なスクロールアニメーション (Fade-in / Parallax) の調整 d99a559
-- [~] Task: Conductor - User Manual Verification 'フェーズ 3: コンテンツ実装' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'フェーズ 3: コンテンツ実装' e045b35 (Protocol in workflow.md)
