@@ -1,0 +1,8 @@
+﻿{
+  "track_id": "full_production_ready_20260205",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-02-05T08:36:37Z",
+  "updated_at": "2026-02-05T08:36:37Z",
+  "description": "本番公開に向けた完全実用化（法的ページ、サービス詳細ページ、解析ツール、実データの完全反映）"
+}
