@@ -1,0 +1,16 @@
+﻿# 実施計画: サービス紹介セクションの実装
+
+## フェーズ 1: コンポーネントの設計と実装
+- [ ] Task: サービスカードコンポーネント (ServiceCard) の作成
+    - [ ] ユニットテストの作成（表示項目、ホバー効果の検証）
+    - [ ] `ServiceCard` コンポーネントの実装
+- [ ] Task: サービスグリッドセクション (ServicesSection) の作成
+    - [ ] ユニットテストの作成（グリッド表示、データの受け渡し）
+    - [ ] `ServicesSection` コンポーネントの実装（Framer MotionによるStagger演出含む）
+- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
+
+## フェーズ 2: トップページへの統合と調整
+- [ ] Task: `ServicesSection` を src/app/page.tsx に追加
+    - [ ] 既存セクション（Hero, News）との位置関係と余白の調整
+- [ ] Task: レスポンシブ表示の最終確認（モバイル・タブレット対応）
+- [ ] Task: Conductor - User Manual Verification 'フェーズ 2: 統合と調整' (Protocol in workflow.md)

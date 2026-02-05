@@ -1,4 +1,4 @@
-﻿# Track initial_base_and_hero_20260205 Context
+﻿# Track services_section_20260205 Context
 
 - [Specification](./spec.md)
 - [Implementation Plan](./plan.md)
