@@ -1,9 +1,9 @@
 ﻿# 実施計画: サービス紹介セクションの実装
 
-## フェーズ 1: コンポーネントの設計と実装
+## フェーズ 1: コンポーネントの設計と実装 [checkpoint: 6aa32cd]
 - [x] Task: サービスカードコンポーネント (ServiceCard) の作成 9c0ec0c
 - [x] Task: サービスグリッドセクション (ServicesSection) の作成 11b80f3
-- [~] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' 6aa32cd (Protocol in workflow.md)
 
 ## フェーズ 2: トップページへの統合と調整
 - [ ] Task: `ServicesSection` を src/app/page.tsx に追加
