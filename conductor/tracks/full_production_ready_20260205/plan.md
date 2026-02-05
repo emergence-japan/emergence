@@ -1,11 +1,11 @@
 ﻿# 実施計画: 本番公開に向けた完全実用化
 
 ## フェーズ 1: 法的基盤と信頼性の構築
-- [~] Task: プライバシーポリシー、利用規約、特定商取引法に基づく表記の作成
-    - [ ] 各ページのルート（/privacy, /terms, /legal）と基本構造の実装
-    - [ ] 専門的ドラフトに基づくコンテンツの流し込みと確認
-- [ ] Task: フッターおよびナビゲーションからのリンク整合性確認
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: 法的基盤構築' (Protocol in workflow.md)
+- [x] Task: プライバシーポリシー、利用規約、特定商取引法に基づく表記の作成 d91e930
+    - [x] 各ページのルート（/privacy, /terms, /legal）と基本構造の実装
+    - [x] 専門的ドラフトに基づくコンテンツの流し込みと確認
+- [x] Task: フッターおよびナビゲーションからのリンク整合性確認 d91e930
+- [~] Task: Conductor - User Manual Verification 'フェーズ 1: 法的基盤構築' (Protocol in workflow.md)
 
 ## フェーズ 2: サービス個別詳細ページの構築
 - [ ] Task: サービス詳細ページ用共通テンプレートの作成

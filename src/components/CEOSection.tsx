@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Image from 'next/link'
@@ -31,10 +31,10 @@ const CEOSection = () => {
           CEO Message
         </h3>
         <p className="text-gray-300 leading-relaxed mb-6 italic">
-          "Emergence-Japan LLC は、テクノロジーの力を信じています。私たちは、単にシステムを構築するのではなく、未来を形作り、お客様と共に新たな価値を創造することを目指しています。私たちの情熱が、皆様のビジネスに革新的な飛躍をもたらすことをお約束します。"
+          "Emergence-Japan LLC 縺ｯ縲√ユ繧ｯ繝弱Ο繧ｸ繝ｼ縺ｮ蜉帙ｒ菫｡縺倥※縺・∪縺吶らｧ√◆縺｡縺ｯ縲∝腰縺ｫ繧ｷ繧ｹ繝・Β繧呈ｧ狗ｯ峨☆繧九・縺ｧ縺ｯ縺ｪ縺上∵悴譚･繧貞ｽ｢菴懊ｊ縲√♀螳｢讒倥→蜈ｱ縺ｫ譁ｰ縺溘↑萓｡蛟､繧貞卸騾縺吶ｋ縺薙→繧堤岼謖・＠縺ｦ縺・∪縺吶らｧ√◆縺｡縺ｮ諠・・縺後∫嚀讒倥・繝薙ず繝阪せ縺ｫ髱ｩ譁ｰ逧・↑鬟幄ｺ阪ｒ繧ゅ◆繧峨☆縺薙→繧偵♀邏・據縺励∪縺吶・
         </p>
         <div>
-          <p className="font-bold text-white text-lg">代表社員 浜田 陽介</p>
+          <p className="font-bold text-white text-lg">莉｣陦ｨ遉ｾ蜩｡ 豬懃伐 髯ｽ莉・/p>
           <p className="text-accent font-mono text-sm uppercase tracking-widest">Chief Executive Officer</p>
         </div>
       </motion.div>

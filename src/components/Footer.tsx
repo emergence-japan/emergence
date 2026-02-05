@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -14,14 +14,12 @@ const Footer = () => {
           
           <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
             <Link href="/privacy" className="text-xs text-gray-400 hover:text-white transition-colors">
-              プライバシーポリシー
+              繝励Λ繧､繝舌す繝ｼ繝昴Μ繧ｷ繝ｼ
             </Link>
             <Link href="/terms" className="text-xs text-gray-400 hover:text-white transition-colors">
-              利用規約
-            </Link>
+              蛻ｩ逕ｨ隕冗ｴ・            </Link>
             <Link href="/legal" className="text-xs text-gray-400 hover:text-white transition-colors">
-              特定商取引法に基づく表記
-            </Link>
+              迚ｹ螳壼膚蜿門ｼ墓ｳ輔↓蝓ｺ縺･縺剰｡ｨ險・            </Link>
           </div>
         </div>
         
