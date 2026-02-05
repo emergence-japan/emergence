@@ -8,9 +8,9 @@
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: 法的基盤構築' 5d9991e (Protocol in workflow.md)
 
 ## フェーズ 2: サービス個別詳細ページの構築
-- [ ] Task: サービス詳細ページ用共通テンプレートの作成
-    - [ ] ユニットテストの作成（動적パラメータの受け渡し確認）
-    - [ ] 共通レイアウト（ヒーロー、導入フロー、FAQ等）の実装
+- [x] Task: サービス詳細ページ用共通テンプレートの作成 5d9991e
+    - [x] ユニットテストの作成（動的パラメータの受け渡し確認）
+    - [x] 共通レイアウト（ヒーロー、導入フロー、FAQ等）の実装
 - [ ] Task: 全6サービス（AI開発〜出版）の個別コンテンツ実装
     - [ ] 各サービスごとの詳細テキスト、画像、CTAの配置
 - [ ] Task: Conductor - User Manual Verification 'フェーズ 2: サービス詳細構築' (Protocol in workflow.md)
