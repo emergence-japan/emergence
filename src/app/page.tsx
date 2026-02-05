@@ -5,6 +5,7 @@ import HeroScene from "@/components/HeroScene";
 import CTAButton from "@/components/CTAButton";
 import NewsSection from "@/components/NewsSection";
 import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
 
 export default function Home() {
   const containerVariants = {
@@ -67,6 +68,8 @@ export default function Home() {
       </motion.div>
 
       <ServicesSection />
+
+      <AboutSection />
 
       <NewsSection />
     </div>
