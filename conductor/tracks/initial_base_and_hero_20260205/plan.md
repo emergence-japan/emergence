@@ -9,7 +9,7 @@
 ## フェーズ 2: トップページ・ヒーローエリアの実装
 - [x] Task: React Three Fiber を用いた3D背景/オブジェクトの実装 71036b7
 - [x] Task: インパクトのあるキャッチコピーと Framer Motion によるタイポグラフィ演出 99bc7d5
-- [ ] Task: コンバージョンに導く「お問い合わせ」ボタンのインタラクション実装
+- [x] Task: コンバージョンに導く「お問い合わせ」ボタンのインタラクション実装 6c6ba8e
 - [ ] Task: Conductor - User Manual Verification 'フェーズ 2: ヒーローエリア' (Protocol in workflow.md)
 
 ## フェーズ 3: コンテンツセクションの実装
