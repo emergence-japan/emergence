@@ -3,7 +3,7 @@
 ## フェーズ 1: フォームの設計とバリデーション実装
 - [x] Task: フォームバリデーション用スキーマ (schema.ts) の作成 d933b97
 - [x] Task: お問い合わせフォームコンポーネント (ContactForm) の作成 de50423
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: フォーム実装' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'フェーズ 1: フォーム実装' (Protocol in workflow.md)
 
 ## フェーズ 2: 送信演出とトップページ統合
 - [ ] Task: 送信完了画面 (SuccessMessage) の実装
