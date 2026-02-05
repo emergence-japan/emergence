@@ -19,5 +19,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 本番運用に向けたブラッシュアップ**
+- [~] **Track: 本番運用に向けたブラッシュアップ**
   *Link: [./conductor/tracks/production_brushup_20260205/](./conductor/tracks/production_brushup_20260205/)*

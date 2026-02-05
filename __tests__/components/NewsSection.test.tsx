@@ -7,9 +7,8 @@ describe('NewsSection', () => {
     expect(screen.getByText(/News/i)).toBeInTheDocument()
   })
 
-  it('renders a list of news items', () => {
+  it('renders the specific news about corporate site launch', () => {
     render(<NewsSection />)
-    const newsItems = screen.getAllByRole('listitem')
-    expect(newsItems.length).toBeGreaterThan(0)
+    expect(screen.getByText(/Emergence-Japan LLC のコーポレートサイトを公開いたしました。/i)).toBeInTheDocument()
   })
 })

@@ -14,9 +14,9 @@ describe('ServicesSection', () => {
     expect(screen.getByText(/Services/i)).toBeInTheDocument()
   })
 
-  it('renders at least 4 service cards', () => {
+  it('renders exactly 6 service cards', () => {
     render(<ServicesSection />)
     const cards = screen.getAllByTestId('service-card')
-    expect(cards.length).toBeGreaterThanOrEqual(4)
+    expect(cards.length).toBe(6)
   })
 })
