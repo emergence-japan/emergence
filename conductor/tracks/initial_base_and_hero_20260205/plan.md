@@ -2,7 +2,7 @@
 
 ## フェーズ 1: 環境構築と基盤実装
 - [x] Task: Next.js プロジェクトの初期化と依存ライブラリ (Framer Motion, Three.js, Lucide) のインストール 9c2c171
-- [ ] Task: Tailwind CSS のダークモード設定とカラーパレットの適用
+- [x] Task: Tailwind CSS のダークモード設定とカラーパレットの適用 7d1b590
 - [ ] Task: 共通レイアウトコンポーネント (Header, Footer) の作成
 - [ ] Task: Conductor - User Manual Verification 'フェーズ 1: 基盤実装' (Protocol in workflow.md)
 
