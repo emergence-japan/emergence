@@ -5,7 +5,7 @@
 - [x] Task: お問い合わせフォームコンポーネント (ContactForm) の作成 de50423
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: フォーム実装' 214d9ff (Protocol in workflow.md)
 
-## フェーズ 2: 送信演出とトップページ統合
+## フェーズ 2: 送信演出とトップページ統合 [checkpoint: a12f95b]
 - [~] Task: 送信完了画面 (SuccessMessage) の実装
     - [ ] フォームからの表示切り替えアニメーション調整
 - [ ] Task: AboutSection の後に ContactSection を統合
