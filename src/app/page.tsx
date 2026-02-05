@@ -6,6 +6,7 @@ import CTAButton from "@/components/CTAButton";
 import NewsSection from "@/components/NewsSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   const containerVariants = {
@@ -70,6 +71,8 @@ export default function Home() {
       <ServicesSection />
 
       <AboutSection />
+
+      <ContactSection />
 
       <NewsSection />
     </div>

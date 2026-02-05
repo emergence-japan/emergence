@@ -6,7 +6,7 @@
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: フォーム実装' 214d9ff (Protocol in workflow.md)
 
 ## フェーズ 2: 送信演出とトップページ統合
-- [ ] Task: 送信完了画面 (SuccessMessage) の実装
+- [~] Task: 送信完了画面 (SuccessMessage) の実装
     - [ ] フォームからの表示切り替えアニメーション調整
 - [ ] Task: AboutSection の後に ContactSection を統合
     - [ ] 全体のナビゲーション（アンカーリンク）との同期調整

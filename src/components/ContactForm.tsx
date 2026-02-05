@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { motion } from 'framer-motion'
 import { contactSchema, ContactFormData } from '@/lib/schema'
 import { useState } from 'react'
+import SuccessMessage from './SuccessMessage'
 
 interface ContactFormProps {
   onSuccess?: () => void
@@ -12,6 +13,7 @@ interface ContactFormProps {
 
 const ContactForm = ({ onSuccess }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
   const {
     register,
     handleSubmit,
@@ -27,8 +29,12 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
     console.log('Form data:', data)
     await new Promise(resolve => setTimeout(resolve, 1500))
     setIsSubmitting(false)
-    reset()
+    setSubmitted(true)
     if (onSuccess) onSuccess()
+  }
+
+  if (submitted) {
+    return <SuccessMessage />
   }
 
   const inputStyles = "w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-white"
