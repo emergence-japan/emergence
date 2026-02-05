@@ -1,0 +1,8 @@
+﻿{
+  "track_id": "initial_base_and_hero_20260205",
+  "type": "feature",
+  "status": "in_progress",
+  "created_at": "2026-02-05T03:48:21Z",
+  "updated_at": "2026-02-05T03:48:21Z",
+  "description": "Next.jsによる環境構築、ダークモード基盤の実装、および3D演出を含むトップページの作成"
+}
