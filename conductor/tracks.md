@@ -8,7 +8,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 
 
----
 
-- [x] **Track: 会社概要セクションの実装**
-  *Link: [./conductor/tracks/about_section_20260205/](./conductor/tracks/about_section_20260205/)*
+
