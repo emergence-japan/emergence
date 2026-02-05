@@ -2,9 +2,7 @@
 
 ## フェーズ 1: コンポーネントの設計と実装
 - [x] Task: サービスカードコンポーネント (ServiceCard) の作成 9c0ec0c
-- [ ] Task: サービスグリッドセクション (ServicesSection) の作成
-    - [ ] ユニットテストの作成（グリッド表示、データの受け渡し）
-    - [ ] `ServicesSection` コンポーネントの実装（Framer MotionによるStagger演出含む）
+- [x] Task: サービスグリッドセクション (ServicesSection) の作成 11b80f3
 - [ ] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
 
 ## フェーズ 2: トップページへの統合と調整
