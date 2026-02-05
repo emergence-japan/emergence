@@ -34,7 +34,7 @@ const CEOSection = () => {
           "Emergence-Japan LLC は、テクノロジーの力を信じています。私たちは、単にシステムを構築するのではなく、未来を形作り、お客様と共に新たな価値を創造することを目指しています。私たちの情熱が、皆様のビジネスに革新的な飛躍をもたらすことをお約束します。"
         </p>
         <div>
-          <p className="font-bold text-white text-lg">代表社員</p>
+          <p className="font-bold text-white text-lg">代表社員 浜田 陽介</p>
           <p className="text-accent font-mono text-sm uppercase tracking-widest">Chief Executive Officer</p>
         </div>
       </motion.div>
