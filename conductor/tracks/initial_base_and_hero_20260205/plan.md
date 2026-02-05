@@ -6,11 +6,11 @@
 - [x] Task: 共通レイアウトコンポーネント (Header, Footer) の作成 f4ed07d
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: 基盤実装' 10f5955 (Protocol in workflow.md)
 
-## フェーズ 2: トップページ・ヒーローエリアの実装
+## フェーズ 2: トップページ・ヒーローエリアの実装 [checkpoint: a771bc9]
 - [x] Task: React Three Fiber を用いた3D背景/オブジェクトの実装 71036b7
 - [x] Task: インパクトのあるキャッチコピーと Framer Motion によるタイポグラフィ演出 99bc7d5
 - [x] Task: コンバージョンに導く「お問い合わせ」ボタンのインタラクション実装 6c6ba8e
-- [~] Task: Conductor - User Manual Verification 'フェーズ 2: ヒーローエリア' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'フェーズ 2: ヒーローエリア' a771bc9 (Protocol in workflow.md)
 
 ## フェーズ 3: コンテンツセクションの実装
 - [ ] Task: ニュース・お知らせセクションのリスト表示実装
