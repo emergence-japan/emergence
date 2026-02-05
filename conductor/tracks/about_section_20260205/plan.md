@@ -1,9 +1,9 @@
 ﻿# 実施計画: 会社概要セクションの実装
 
-## フェーズ 1: コンポーネントの実装
+## フェーズ 1: コンポーネントの実装 [checkpoint: 72b9d7f]
 - [x] Task: 会社基本情報テーブル (CompanyInfoTable) の作成 cc75628
 - [x] Task: 代表メッセージコンポーネント (CEOSection) の作成 771b6ff
-- [~] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' 72b9d7f (Protocol in workflow.md)
 
 ## フェーズ 2: トップページへの統合と全体調整
 - [ ] Task: `AboutSection` として全要素をまとめ、src/app/page.tsx に追加
