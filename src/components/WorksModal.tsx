@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useEffect } from 'react'
+import Image from 'next/image'
 
 interface Work {
   title: string
@@ -65,9 +66,13 @@ const WorksModal = ({ isOpen, work, onClose }: WorksModalProps) => {
             <div className="flex flex-col md:flex-row">
               {/* Image Section */}
               <div className="w-full md:w-1/2 aspect-video md:aspect-auto bg-white/5 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500 italic">
-                  Gallery Image
-                </div>
+                <Image
+                  src={work.imageUrl}
+                  alt={work.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
 
               {/* Text Section */}

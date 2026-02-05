@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface Work {
   title: string
@@ -21,15 +22,21 @@ const WorksCard = ({ work, onClick }: WorksCardProps) => {
       onClick={onClick}
       className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 group bg-white/5"
     >
-      {/* Background Image Placeholder */}
+      {/* Background Image */}
       <motion.div
         variants={{
           hover: { scale: 1.1 }
         }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="absolute inset-0 flex items-center justify-center text-gray-600 italic bg-white/5"
+        className="absolute inset-0 w-full h-full"
       >
-        Project Visual
+        <Image
+          src={work.imageUrl}
+          alt={work.title}
+          fill
+          className="object-cover transition-opacity group-hover:opacity-80"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </motion.div>
 
       {/* Overlay */}
