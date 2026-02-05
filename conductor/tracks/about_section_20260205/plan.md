@@ -6,8 +6,8 @@
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' 72b9d7f (Protocol in workflow.md)
 
 ## フェーズ 2: トップページへの統合と全体調整
-- [ ] Task: `AboutSection` として全要素をまとめ、src/app/page.tsx に追加
+- [x] Task: `AboutSection` として全要素をまとめ、src/app/page.tsx に追加 72b9d7f
     - [ ] ミッション・ビジョン部分のタイポグラフィ実装
     - [ ] 既存セクションとの余白・アニメーションの調整
-- [ ] Task: レスポンシブ表示の最終確認
+- [~] Task: レスポンシブ表示の最終確認
 - [ ] Task: Conductor - User Manual Verification 'フェーズ 2: 統合と調整' (Protocol in workflow.md)
