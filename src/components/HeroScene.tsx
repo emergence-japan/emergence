@@ -3,10 +3,16 @@
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Sphere, MeshDistortMaterial, Float } from '@react-three/drei'
+import { useScroll, useTransform } from 'framer-motion'
 import * as THREE from 'three'
 
 const AnimatedSphere = () => {
   const meshRef = useRef<THREE.Mesh>(null)
+  const { scrollYProgress } = useScroll()
+  
+  // Scrolly parallax values
+  const yPos = useTransform(scrollYProgress, [0, 1], [0, -2])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   useFrame((state) => {
     if (!meshRef.current) return
@@ -14,7 +20,7 @@ const AnimatedSphere = () => {
     meshRef.current.rotation.x = Math.cos(t / 4) / 2
     meshRef.current.rotation.y = Math.sin(t / 4) / 2
     meshRef.current.rotation.z = Math.sin(t / 4) / 2
-    meshRef.current.position.y = Math.sin(t / 1.5) / 10
+    meshRef.current.position.y = (Math.sin(t / 1.5) / 10) + yPos.get()
   })
 
   return (
@@ -25,6 +31,8 @@ const AnimatedSphere = () => {
           speed={3}
           distort={0.4}
           radius={1}
+          transparent
+          opacity={opacity.get() as unknown as number}
         />
       </Sphere>
     </Float>

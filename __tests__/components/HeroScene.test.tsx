@@ -7,6 +7,13 @@ jest.mock('@react-three/fiber', () => ({
   useFrame: jest.fn(),
 }))
 
+// Mocking Framer Motion scroll hooks
+jest.mock('framer-motion', () => ({
+  ...jest.requireActual('framer-motion'),
+  useScroll: () => ({ scrollYProgress: { get: () => 0 } }),
+  useTransform: () => ({ get: () => 0 }),
+}))
+
 // Mocking React Three Drei to avoid issues with specialized components
 jest.mock('@react-three/drei', () => ({
   Sphere: ({ children }: { children: React.ReactNode }) => <div data-testid="sphere">{children}</div>,
