@@ -6,7 +6,7 @@
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: コンポーネント実装' a6c10ab (Protocol in workflow.md)
 
 ## フェーズ 2: セクション統合と全体調整
-- [ ] Task: 実績ギャラリーセクション (WorksSection) の作成とトップページへの統合
+- [~] Task: 実績ギャラリーセクション (WorksSection) の作成とトップページへの統合
     - [ ] src/app/page.tsx へ `WorksSection` を追加
     - [ ] 実績データ（セミナー、開発等）の作成と適用
     - [ ] 全体のスクロールアニメーション調整

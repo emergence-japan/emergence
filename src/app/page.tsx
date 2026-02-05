@@ -6,6 +6,7 @@ import CTAButton from "@/components/CTAButton";
 import NewsSection from "@/components/NewsSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
+import WorksSection from "@/components/WorksSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -71,6 +72,8 @@ export default function Home() {
       <ServicesSection />
 
       <AboutSection />
+
+      <WorksSection />
 
       <ContactSection />
 
