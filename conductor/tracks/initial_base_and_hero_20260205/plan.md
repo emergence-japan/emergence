@@ -4,7 +4,7 @@
 - [x] Task: Next.js プロジェクトの初期化と依存ライブラリ (Framer Motion, Three.js, Lucide) のインストール 9c2c171
 - [x] Task: Tailwind CSS のダークモード設定とカラーパレットの適用 7d1b590
 - [x] Task: 共通レイアウトコンポーネント (Header, Footer) の作成 f4ed07d
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: 基盤実装' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'フェーズ 1: 基盤実装' (Protocol in workflow.md)
 
 ## フェーズ 2: トップページ・ヒーローエリアの実装
 - [ ] Task: React Three Fiber を用いた3D背景/オブジェクトの実装
