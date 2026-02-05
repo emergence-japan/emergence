@@ -41,7 +41,7 @@ export default function Home() {
           className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight"
           variants={itemVariants}
         >
-          Innovating the <span className="text-accent drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]">Future</span>
+          Emergence <span className="text-accent drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]">Japan</span>
         </motion.h2>
         
         <motion.p 

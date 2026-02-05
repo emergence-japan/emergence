@@ -7,7 +7,7 @@ jest.mock('../../src/components/HeroScene', () => () => <div data-testid="hero-s
 describe('Home Page', () => {
   it('renders the main heading', () => {
     render(<Home />)
-    expect(screen.getByRole('heading', { name: /Innovating the Future/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Emergence Japan/i })).toBeInTheDocument()
   })
 
   it('renders the action buttons', () => {
