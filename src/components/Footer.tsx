@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-white/10 py-12">
@@ -10,9 +12,16 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="flex gap-6">
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
+            <Link href="/privacy" className="text-xs text-gray-400 hover:text-white transition-colors">
+              プライバシーポリシー
+            </Link>
+            <Link href="/terms" className="text-xs text-gray-400 hover:text-white transition-colors">
+              利用規約
+            </Link>
+            <Link href="/legal" className="text-xs text-gray-400 hover:text-white transition-colors">
+              特定商取引法に基づく表記
+            </Link>
           </div>
         </div>
         
