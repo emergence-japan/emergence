@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import HeroScene from "@/components/HeroScene";
+import CTAButton from "@/components/CTAButton";
 
 export default function Home() {
   const containerVariants = {
@@ -54,12 +55,12 @@ export default function Home() {
           className="flex gap-4"
           variants={itemVariants}
         >
-          <button className="px-8 py-3 bg-accent text-accent-foreground rounded-full font-bold hover:opacity-90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+          <CTAButton>
             Get Started
-          </button>
-          <button className="px-8 py-3 border border-white/20 rounded-full font-bold hover:bg-white/5 hover:scale-105 transition-all">
+          </CTAButton>
+          <CTAButton variant="secondary">
             Learn More
-          </button>
+          </CTAButton>
         </motion.div>
       </motion.div>
     </div>
