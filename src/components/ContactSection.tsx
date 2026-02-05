@@ -5,7 +5,7 @@ import ContactForm from './ContactForm'
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-white/[0.02]">
+    <section id="contact" className="py-24 relative overflow-hidden bg-transparent">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2

@@ -25,7 +25,7 @@ const newsData = [
 
 const NewsSection = () => {
   return (
-    <section id="news" className="py-24 bg-background">
+    <section id="news" className="py-24 bg-transparent">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

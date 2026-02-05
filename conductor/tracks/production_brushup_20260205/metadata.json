@@ -1,0 +1,8 @@
+﻿{
+  "track_id": "production_brushup_20260205",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-02-05T06:39:54Z",
+  "updated_at": "2026-02-05T06:39:54Z",
+  "description": "本番運用に向けた実データの流し込み、お問い合わせフォームの実用化、およびSEO設定"
+}
