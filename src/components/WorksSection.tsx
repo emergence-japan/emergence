@@ -25,28 +25,28 @@ const worksData = [
     category: 'App Development',
     description: '障害福祉現場の業務効率化と利用者支援の利便性向上のため、就労継続支援B型事業に特化した専用アプリケーションを開発。',
     client: '障害福祉サービス事業所',
-    imageUrl: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
   },
   {
     title: '商工会議所・商工会でのセミナー実績',
     category: 'Seminar',
     description: '中小企業の経営者や担当者を対象に、AI活用やDX推進をテーマとしたセミナーを多数実施。実務に即した具体的な手法を解説。',
     client: '全国各地の商工会議所・商工会',
-    imageUrl: 'https://images.unsplash.com/photo-1591115765373-520b7a217294?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: 'https://images.unsplash.com/photo-1475721027187-402ad2989a3b?q=80&w=2070&auto=format&fit=crop'
   },
   {
     title: '株式会社サンワ 社員研修',
     category: 'Training',
     description: '組織全体のデジタルリテラシー底上げのため、AI活用を中心とした全社的な社員研修プログラムを提供。',
     client: '株式会社サンワ',
-    imageUrl: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'
   },
   {
     title: '大阪デザイン＆テクノロジー専門学校 AI講師',
     category: 'Education',
     description: '次世代のクリエイターやエンジニアを目指す学生に向け、実務で使えるAI技術の講義を担当。',
     client: '大阪デザイン＆テクノロジー専門学校',
-    imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop'
   }
 ]
 

@@ -1,15 +1,15 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion'
 import CEOSection from './CEOSection'
 import CompanyInfoTable from './CompanyInfoTable'
 
 const companyData = [
-  { label: '蝠・捷', value: 'Emergence-Japan LLC (繧ｨ繝槭・繧ｸ繧ｧ繝ｳ繧ｹ繝ｻ繧ｸ繝｣繝代Φ蜷亥酔莨夂､ｾ)' },
-  { label: '謇蝨ｨ蝨ｰ', value: '縲・50-0014 螟ｧ髦ｪ蠎懷､ｧ髦ｪ蟶り･ｿ蛹ｺ蛹怜豎・-4-6' },
-  { label: '險ｭ遶・, value: '2017蟷ｴ4譛・譌･' },
-  { label: '莉｣陦ｨ閠・, value: '豬懃伐髯ｽ莉・ },
-  { label: '莠区･ｭ蜀・ｮｹ', value: '逕滓・AI繧ｽ繝ｪ繝･繝ｼ繧ｷ繝ｧ繝ｳ髢狗匱縲仝eb/繧｢繝励Μ髢狗匱縲．X繧ｳ繝ｳ繧ｵ繝ｫ繝・ぅ繝ｳ繧ｰ縲∽ｺｺ譚占ご謌・ },
+  { label: '商号', value: 'Emergence-Japan LLC (エマージェンス・ジャパン合同会社)' },
+  { label: '所在地', value: '〒550-0014 大阪府大阪市西区北堀江4-4-6' },
+  { label: '設立', value: '2017年4月2日' },
+  { label: '代表者', value: '浜田陽介' },
+  { label: '事業内容', value: '生成AIソリューション開発、Web/アプリ開発、DXコンサルティング、人材育成' },
 ]
 
 const AboutSection = () => {
@@ -33,8 +33,9 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight"
           >
-            繝・け繝弱Ο繧ｸ繝ｼ縺ｮ蜉帙〒縲・br />
-            <span className="text-accent">譁ｰ縺溘↑蜿ｯ閭ｽ諤ｧ</span>繧貞卸蜃ｺ縺吶ｋ縲・          </motion.h2>
+            テクノロジーの力で、<br />
+            <span className="text-accent">新たな可能性</span>を創出する。
+          </motion.h2>
         </div>
 
         {/* CEO Message */}

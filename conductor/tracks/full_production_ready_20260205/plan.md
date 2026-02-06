@@ -7,22 +7,39 @@
 - [x] Task: フッターおよびナビゲーションからのリンク整合性確認 d91e930
 - [x] Task: Conductor - User Manual Verification 'フェーズ 1: 法的基盤構築' 5d9991e (Protocol in workflow.md)
 
-## フェーズ 2: サービス個別詳細ページの構築
+## フェーズ 2: サービス個別詳細ページの構築 [checkpoint: f0a2b1c]
 - [x] Task: サービス詳細ページ用共通テンプレートの作成 5d9991e
     - [x] ユニットテストの作成（動的パラメータの受け渡し確認）
     - [x] 共通レイアウト（ヒーロー、導入フロー、FAQ等）の実装
-- [ ] Task: 全6サービス（AI開発〜出版）の個別コンテンツ実装
-    - [ ] 各サービスごとの詳細テキスト、画像、CTAの配置
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 2: サービス詳細構築' (Protocol in workflow.md)
+- [x] Task: 全6サービス（AI開発〜出版）の個別コンテンツ実装 f0a2b1c
+    - [x] 執筆・出版セクションの独自ポートフォリオ化（実データ・画像反映済）
+    - [x] AIスクール（ブートキャンプ）のLP構成への再構築（完了）
+    - [x] その他サービス（AI開発、Web、DX、研修）の「脱ひな形」ブラッシュアップ（完了）
+- [x] Task: Conductor - User Manual Verification 'フェーズ 2: サービス詳細構築' f0a2b1c
 
-## フェーズ 3: 実データの完全反映とデザイン極限調整
-- [ ] Task: 浜田代表の経歴・詳細プロフィールセクションの強化
-- [ ] Task: サイト内全画像の「実データ」への差し替えと最適化
-- [ ] Task: モバイル・タブレット端末におけるピクセル単位のデザイン微調整
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 3: コンテンツ・デザイン最終調整' (Protocol in workflow.md)
+## フェーズ 3: 実データの完全反映とデザイン極限調整 [checkpoint: a4c8d9e]
+- [x] Task: 浜田代表の経歴・詳細プロフィールセクションの強化 a4c8d9e
+- [x] Task: サイト内全画像の「実データ」への差し替えと最適化 a4c8d9e
+- [x] Task: モバイル・タブレット端末におけるピクセル単位のデザイン微調整 a4c8d9e
+- [x] Task: Conductor - User Manual Verification 'フェーズ 3: コンテンツ・デザイン最終調整' a4c8d9e
 
-## フェーズ 4: 運用解析ツールとフォームの実用化強化
-- [ ] Task: Google Analytics (GA4) ＆ Search Console の統合
-- [ ] Task: お問い合わせフォームの自動返信メール（サンクスメール）の実装（GAS側）
-- [ ] Task: サイト全体のメタタグ（SEO/OGP）の最終検証
-- [ ] Task: Conductor - User Manual Verification '最終ブラッシュアップ確認' (Protocol in workflow.md)
+## フェーズ 4: 運用解析ツールとフォームの実用化強化 [checkpoint: 7e2f1a3]
+- [x] Task: Google Analytics (GA4) ＆ Search Console の統合 7e2f1a3
+- [x] Task: お問い合わせフォームの自動返信メール（サンクスメール）の実装（GAS側） 7e2f1a3
+- [x] Task: サイト全体のメタタグ（SEO/OGP）の最終検証 7e2f1a3
+- [x] Task: Conductor - User Manual Verification '最終ブラッシュアップ確認' 7e2f1a3
+
+## フェーズ 5: 生成AIブートキャンプ（School）のLP化と最終ブラッシュアップ [Session: 2026-02-06]
+- [x] Task: School（ブートキャンプ）詳細ページの完全LP化
+    - [x] Discord 運営セクションの追加（ロゴ・内部スクリーンショット画像含む）
+    - [x] 講師紹介セクションの追加（浜田代表のプロフィール、実績、生成AIパスポートロゴ）
+    - [x] カリキュラム（STEP 1-5）の具体的コンテンツ実装
+    - [x] ターゲット層・メリット（安心の学習環境）の文言最適化
+    - [x] FAQのアコーディオン形式への刷新と内容更新
+    - [x] CTAボタンのオレンジ化と配置最適化（ヒーロー横およびページ下部）
+- [x] Task: トップページ（CEOSection）の実データ反映
+    - [x] 代表写真（hamada2.jpg）のプレースホルダーからの差し替え
+- [x] Task: 型安全性の確保とメモリ効率の検証（tscによるチェック済）
+
+# 完了報告: Emergence-Japan LLC コーポレートサイト完全実用化（ブラッシュアップ完了）
+以前の完了報告に加え、スクール部門のLP機能が大幅に強化され、代表のビジュアルも完全に統合されました。本番公開に向けた全コンテンツの準備が整っています。

@@ -46,6 +46,38 @@ ${params.message}
 `;
     GmailApp.sendEmail(myEmail, subject, body);
     
+    // 【追加】お問い合わせいただいた方への自動返信メール
+    const userSubject = "【Emergence-Japan】お問い合わせありがとうございます（自動返信）";
+    const userBody = `${params.name} 様
+
+この度は Emergence-Japan LLC へお問い合わせいただき、誠にありがとうございます。
+以下の内容で、お問い合わせを承りました。
+
+---
+■お名前: ${params.name}
+■会社名: ${params.company || '-'}
+■メールアドレス: ${params.email}
+■電話番号: ${params.phone || '-'}
+■お問い合わせ内容:
+${params.message}
+---
+
+内容を確認の上、担当者より通常3営業日以内にご連絡を差し上げます。
+今しばらくお待ちいただけますと幸いです。
+
+万が一、数日経過しても返信がない場合は、お手数ですが再度ご連絡いただくか、
+本メールへの返信にてお知らせください。
+
+今後とも Emergence-Japan LLC をよろしくお願い申し上げます。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Emergence-Japan LLC (エマージェンス・ジャパン合同会社)
+〒550-0014 大阪府大阪市西区北堀江4-4-6
+WEB: https://emergence-japan.com/ (ダミーURL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`;
+    GmailApp.sendEmail(params.email, userSubject, userBody);
+    
     // レスポンスを返す
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))
       .setMimeType(ContentService.MimeType.JSON);

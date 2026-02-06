@@ -29,10 +29,18 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     )
   }
 
-  return (
-    <div className="relative min-h-screen bg-background">
-      <HeroScene />
-      <ServiceDetailClient service={service} />
-    </div>
-  )
-}
+    return (
+
+      <div className="relative min-h-screen bg-transparent">
+
+        <HeroScene />
+
+        <ServiceDetailClient service={service} />
+
+      </div>
+
+    )
+
+  }
+
+  

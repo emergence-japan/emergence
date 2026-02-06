@@ -7,39 +7,39 @@ import ServiceCard from './ServiceCard'
 const services = [
   {
     title: 'AIソリューション開発',
-    description: '生成AIや機械学習を活用し、ビジネスプロセスを自動化・高度化するカスタムソリューションを提供します。',
+    description: '生成AIを活用し、ビジネスプロセスを自動化・高度化するカスタムソリューションを提供します。',
     icon: Brain,
-    href: '#services/ai'
+    href: '/services/ai'
   },
   {
     title: 'Web / アプリ開発',
     description: 'モダンな技術スタックを用いた、スケーラブルでパフォーマンスの高いWebサイトやアプリケーションを構築します。',
     icon: Code,
-    href: '#services/web'
+    href: '/services/web'
   },
   {
     title: 'DXコンサルティング',
-    description: 'デジタル技術の導入から組織変革まで、企業のデジタルトランスフォーメーションをトータルでサポートします。',
+    description: 'AIノウハウを組織の「頭脳」となる部署へ直接移植。自律的に業務を改善・自動化し続けられる「自走するコア」を構築します。',
     icon: Rocket,
-    href: '#services/dx'
+    href: '/services/dx'
   },
   {
     title: '社員研修',
     description: '企業のAI活用力を高めるための実践的なプログラムを提供。プロンプトエンジニアリングから業務自動化まで、即戦力となるスキルを習得します。',
     icon: Users,
-    href: '#services/training'
+    href: '/services/training'
   },
   {
     title: '個人向けAIスクール',
     description: 'コミュニティで仲間と共に学ぶオンラインスクール。入会費のみで教材が学び放題、さらに月2回のオンラインセミナーで最新の知見を共有します。',
     icon: GraduationCap,
-    href: '#services/school'
+    href: '/services/school'
   },
   {
     title: '出版・執筆',
     description: 'AI時代にこそ問われる「人間の思考力」をテーマにした書籍を2冊出版。哲学、心理学、科学、文学、芸術といったあらゆる教養を横断した知見を基に、テクノロジーを使いこなすための本質的な知性を発信しています。',
     icon: BookOpen,
-    href: '#services/publishing'
+    href: '/services/publishing'
   }
 ]
 
@@ -98,7 +98,7 @@ const ServicesSection = () => {
       </div>
       
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-accent/10 rounded-full blur-[160px] -z-10 opacity-50" />
     </section>
   )
 }
