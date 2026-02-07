@@ -1,45 +1,59 @@
 /**
- * 【スクール申し込み専用】Googleスプレッドシートの「拡張機能」 > 「Apps Script」に貼り付けて使用してください。
+ * 【スクール申し込み専用・完成版】
  */
 
-function doPost(e) {
-  try {
-    const params = JSON.parse(e.postData.contents);
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    
-    // 選択肢の日本語変換マップ
-    const occupationMap = { employee: '会社員', public: '公務員', executive: '経営者・役員', freelance: '自営業・フリーランス', homemaker: '主婦・主夫', student: '学生', other: 'その他' };
-    const ageMap = { under20: '20代未満', '20s': '20代', '30s': '30代', '40s': '40代', '50s': '50代', '60s': '60代', '70s': '70代以上' };
-    const aiLevelMap = { none: '全く使ったことがない', beginner: '触ったことはある', intermediate: '日常的に使っている', advanced: '業務でフル活用している' };
-    const goalMap = { basic: '基本操作', efficiency: '実務効率化', prompt: 'プロンプト設計', app: 'アプリ開発', latest: '最新情報' };
-    const sourceMap = { sns: 'SNS', referral: '紹介', seminar: 'セミナー', other: 'その他' };
-    const paymentMap = { bank: '銀行振込', paypal: 'PayPal' };
+function doGet(e) {
+  return ContentService.createTextOutput("スクール用GAS：正常に動作しています。");
+}
 
-    // スプレッドシートにデータを追加
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+  try {
+    var p = e.parameter;
+    if ((!p || !p.name) && e.postData && e.postData.contents) {
+      try { p = JSON.parse(e.postData.contents); } catch (err) {}
+    }
+
+    if (!p || !p.name) throw new Error("No data");
+
+    // AIスクール専用のスプレッドシートID
+    var spreadsheetId = "1PRVejuFcuZB0sYGxj5Lr1XE8yzrbQtM2p6sA0ww9w04";
+    var ss = SpreadsheetApp.openById(spreadsheetId);
+    var sheet = ss.getSheetByName("スクール申込") || ss.getSheetByName("シート1") || ss.getSheets()[0];
+    
+    // 日本語変換マップ
+    var occupationMap = { employee: '会社員', public: '公務員', executive: '経営者・役員', freelance: '自営業・フリーランス', homemaker: '主婦・主夫', student: '学生', other: 'その他' };
+    var ageMap = { under20: '20代未満', '20s': '20代', '30s': '30代', '40s': '40代', '50s': '50代', '60s': '60代', '70s': '70代以上' };
+    var aiLevelMap = { none: '全く使ったことがない', beginner: '触ったことはある', intermediate: '日常的に使っている', advanced: '業務でフル活用している' };
+    var goalMap = { basic: '基本操作', efficiency: '実務効率化', prompt: 'プロンプト設計', app: 'アプリ開発', latest: '最新情報' };
+    var sourceMap = { sns: 'SNS', referral: '紹介', seminar: 'セミナー', other: 'その他' };
+    var paymentMap = { bank: '銀行振込', paypal: 'PayPal' };
+
+    // スプレッドシートに追記（空行を挿入せず、一番下に追加）
     sheet.appendRow([
       new Date(),
-      params.name,
-      params.email,
-      params.phone || '-',
-      ageMap[params.ageRange] || params.ageRange,
-      occupationMap[params.occupation] || params.occupation,
-      aiLevelMap[params.aiLevel] || params.aiLevel,
-      goalMap[params.goal] || params.goal,
-      sourceMap[params.source] || params.source,
-      paymentMap[params.paymentMethod] || params.paymentMethod
+      p.name,
+      p.email,
+      p.phone || '-',
+      ageMap[p.ageRange] || p.ageRange || "",
+      occupationMap[p.occupation] || p.occupation || "",
+      aiLevelMap[p.aiLevel] || p.aiLevel || "",
+      goalMap[p.goal] || p.goal || "",
+      sourceMap[p.source] || p.source || "",
+      paymentMap[p.paymentMethod] || p.paymentMethod || ""
     ]);
     
     // 管理者通知
-    const adminEmail = "info@emergence-japan.com";
-    const adminSubject = "【スクール申込】" + params.name + "様よりお申し込み";
-    const adminBody = "生成AIブートキャンプへのお申し込みがありました。\n\n■お名前: " + params.name + "\n■メール: " + params.email + "\n■支払い方法: " + (paymentMap[params.paymentMethod] || params.paymentMethod);
+    var adminEmail = "info@emergence-japan.com";
+    var adminSubject = "【スクール申込】" + p.name + "様よりお申し込み";
+    var adminBody = "生成AIブートキャンプへのお申し込みがありました。\n\n" + JSON.stringify(p, null, 2);
     GmailApp.sendEmail(adminEmail, adminSubject, adminBody);
     
     // 【ユーザー宛・自動返信メール】
-    const userSubject = "【生成AIブートキャンプ】参加お申し込みありがとうございます";
-    
-    // 指示されたテンプレートを厳密に再現
-    const userBody = params.name + "さん" + `
+    if (p.email) {
+      var userSubject = "【生成AIブートキャンプ】参加お申し込みありがとうございます";
+      var userBody = p.name + "さん" + `
 
 
 生成ＡＩブートキャンプに
@@ -120,13 +134,16 @@ WindowsでもMacでも問題ございません
 浜田陽介
 ----------------------------------`;
 
-    GmailApp.sendEmail(params.email, userSubject, userBody);
-    
+      GmailApp.sendEmail(p.email, userSubject, userBody);
+    }
+
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({ status: 'error', message: error.toString() }))
+    return ContentService.createTextOutput(JSON.stringify({ status: 'error', error: error.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
   }
 }

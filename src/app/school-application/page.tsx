@@ -35,24 +35,32 @@ export default function SchoolApplicationPage() {
   }, [errors, isSubmitted])
 
   const onSubmit = async (data: SchoolApplicationData) => {
+    const endpoint = process.env.NEXT_PUBLIC_SCHOOL_FORM_ENDPOINT || process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
+    
+    if (!endpoint || endpoint.includes('xxxx')) {
+      console.error('GAS Endpoint not configured.')
+      alert('システム設定エラー：申し込みフォームのエンドポイントが設定されていません。お手数ですが info@emergence-japan.com までご連絡ください。')
+      return
+    }
+
     setIsSubmitting(true)
     setSelectedPayment(data.paymentMethod)
     try {
-      const endpoint = process.env.NEXT_PUBLIC_SCHOOL_FORM_ENDPOINT || process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
-      
-      if (!endpoint || endpoint.includes('xxxx')) {
-        console.log('GAS Endpoint not configured. Application data:', data)
-        await new Promise(resolve => setTimeout(resolve, 1500))
-      } else {
-        await fetch(endpoint, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ ...data, type: 'school_application' }),
-        })
-      }
+      // GASに確実にデータを届けるためのフォーム形式
+      const params = new URLSearchParams()
+      Object.entries(data).forEach(([key, value]) => {
+        params.append(key, value as string)
+      })
+      params.append('type', 'school_application')
+
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: params.toString(),
+      })
       
       setSubmitted(true)
       window.scrollTo({ top: 0, behavior: 'smooth' })

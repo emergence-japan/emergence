@@ -23,27 +23,41 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
     resolver: zodResolver(contactSchema)
   })
 
+  // バリデーションエラーを監視
+  if (Object.keys(errors).length > 0) {
+    console.log('入力エラーあり:', errors)
+  }
+
   const onSubmit = async (data: ContactFormData) => {
+    const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
+    
+    console.log('--- フォーム送信開始 ---')
+    console.log('宛先URL:', endpoint)
+    console.log('送信データ:', data)
+
+    if (!endpoint || endpoint.includes('xxxx')) {
+      console.error('GAS Endpoint not configured.')
+      alert('システム設定エラー：お問い合わせフォームのエンドポイントが設定されていません。管理者にお問い合わせください。')
+      return
+    }
+
     setIsSubmitting(true)
     
     try {
-      const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
+      const params = new URLSearchParams()
+      Object.entries(data).forEach(([key, value]) => {
+        params.append(key, value as string)
+      })
+
+      console.log('送信パラメータ:', params.toString())
+
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: params, // URLSearchParamsをそのまま渡すとブラウザが自動でContent-Typeを設定します
+      })
       
-      if (!endpoint || endpoint.includes('xxxx')) {
-        // Fallback for development if endpoint is not set
-        console.log('GAS Endpoint not configured. Form data:', data)
-        await new Promise(resolve => setTimeout(resolve, 1500))
-      } else {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          mode: 'no-cors', // GAS requires no-cors for simple web app triggers
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-      }
-      
+      console.log('fetch完了（no-corsモードのためレスポンス詳細は不明）')
       setIsSubmitting(false)
       setSubmitted(true)
       if (onSuccess) onSuccess()
