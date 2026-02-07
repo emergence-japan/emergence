@@ -72,7 +72,7 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
             </h1>
             {isSchool && (
               <div className="shrink-0 mt-4 md:mt-2">
-                <Link href="/#contact" className="inline-flex items-center gap-3 px-8 py-3.5 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_10px_30px_rgba(234,88,12,0.3)] text-base md:text-lg">
+                <Link href="/school-application" className="relative z-50 inline-flex items-center gap-3 px-8 py-3.5 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_10px_30px_rgba(234,88,12,0.3)] text-base md:text-lg">
                   {service.cta || 'コミュニティに参加する'}
                 </Link>
               </div>
@@ -600,8 +600,13 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
         )}
 
         {/* CTA */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="p-16 md:p-32 rounded-[4rem] text-center relative overflow-hidden shadow-2xl bg-gradient-to-br from-accent/30 via-background to-background border border-accent/30">
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          className="relative z-40 p-16 md:p-32 rounded-[4rem] text-center overflow-hidden shadow-2xl bg-gradient-to-br from-accent/30 via-background to-background border border-accent/30"
+        >
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none" />
           <Mail className="mx-auto mb-10 text-accent animate-pulse" size={64} />
           <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
             {service.cta ? service.cta : '理想を現実に変える一歩を'}
@@ -614,7 +619,10 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
               : '貴社の課題や個人の目標に合わせ、最適なソリューションをオーダーメイドでご提案いたします。まずはお気軽にご相談ください。'
             }
           </p>
-          <Link href="/#contact" className="inline-flex items-center gap-4 px-16 py-6 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_20px_50px_rgba(234,88,12,0.4)] text-2xl">
+          <Link 
+            href={isSchool ? "/school-application" : "/#contact"} 
+            className="relative z-50 inline-flex items-center gap-4 px-16 py-6 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_20px_50px_rgba(234,88,12,0.4)] text-2xl"
+          >
             {service.cta ? service.cta : '無料で相談を始める'}
           </Link>
         </motion.div>

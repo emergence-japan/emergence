@@ -64,6 +64,25 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl mx-auto p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl">
+      <div>
+        <label htmlFor="inquiryType" className={labelStyles}>お問い合わせ種別 <span className="text-accent">*</span></label>
+        <select
+          id="inquiryType"
+          {...register('inquiryType')}
+          className={`${inputStyles} appearance-none cursor-pointer`}
+          defaultValue=""
+        >
+          <option value="" disabled className="bg-gray-900">選択してください</option>
+          <option value="ai_solution" className="bg-gray-900">AIソリューション開発について</option>
+          <option value="web_app" className="bg-gray-900">Web / アプリ開発について</option>
+          <option value="dx_consulting" className="bg-gray-900">DXコンサルティングについて</option>
+          <option value="training" className="bg-gray-900">社員研修について</option>
+          <option value="publishing" className="bg-gray-900">出版・執筆のご依頼について</option>
+          <option value="other" className="bg-gray-900">その他のお問い合わせ</option>
+        </select>
+        {errors.inquiryType && <p className={errorStyles}>{errors.inquiryType.message}</p>}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={labelStyles}>お名前 <span className="text-accent">*</span></label>

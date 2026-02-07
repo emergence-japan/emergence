@@ -17,10 +17,22 @@ function doPost(e) {
     const params = JSON.parse(e.postData.contents);
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
     
+    // お問い合わせ種別を日本語に変換
+    const inquiryTypeMap = {
+      'ai_solution': 'AIソリューション開発',
+      'web_app': 'Web / アプリ開発',
+      'dx_consulting': 'DXコンサルティング',
+      'training': '社員研修',
+      'publishing': '出版・執筆のご依頼',
+      'other': 'その他'
+    };
+    const inquiryTypeText = inquiryTypeMap[params.inquiryType] || params.inquiryType || '不明';
+
     // スプレッドシートにデータを追加
-    // 列順: 日時, お名前, 会社名, メールアドレス, 電話番号, お問い合わせ内容
+    // 列順: 日時, 種別, お名前, 会社名, メールアドレス, 電話番号, お問い合わせ内容
     sheet.appendRow([
       new Date(),
+      inquiryTypeText,
       params.name,
       params.company || '',
       params.email,
@@ -28,12 +40,13 @@ function doPost(e) {
       params.message
     ]);
     
-    // 通知メールの送信（ご自身のメールアドレスに届きます）
-    const myEmail = Session.getActiveUser().getEmail();
+    // 通知メールの送信（指定のアドレスに届きます）
+    const myEmail = "info@emergence-japan.com";
     const subject = "【Emergence-Japan】WEBサイトよりお問い合わせがありました";
     const body = `
 以下の内容でお問い合わせがありました。
 
+■お問い合わせ種別: ${inquiryTypeText}
 ■お名前: ${params.name}
 ■会社名: ${params.company || '-'}
 ■メールアドレス: ${params.email}
@@ -54,6 +67,7 @@ ${params.message}
 以下の内容で、お問い合わせを承りました。
 
 ---
+■お問い合わせ種別: ${inquiryTypeText}
 ■お名前: ${params.name}
 ■会社名: ${params.company || '-'}
 ■メールアドレス: ${params.email}
@@ -73,7 +87,7 @@ ${params.message}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Emergence-Japan LLC (エマージェンス・ジャパン合同会社)
 〒550-0014 大阪府大阪市西区北堀江4-4-6
-WEB: https://emergence-japan.com/ (ダミーURL)
+WEB: https://emergence-japan.com/
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 `;
     GmailApp.sendEmail(params.email, userSubject, userBody);

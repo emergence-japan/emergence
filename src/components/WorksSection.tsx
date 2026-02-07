@@ -18,35 +18,35 @@ const worksData = [
     category: 'System Development',
     description: '介護現場の教育課題を解決するため、効率的な学習管理を実現するLMSを独自開発。現場の生産性向上とスキルアップを支援。',
     client: '介護業界各社',
-    imageUrl: '/works/LMS.png'
+    imageUrl: '/works/LMS_new.png'
   },
   {
     title: '就労継続支援B型事業 専用アプリ開発',
     category: 'App Development',
     description: '障害福祉現場の業務効率化と利用者支援の利便性向上のため、就労継続支援B型事業に特化した専用アプリケーションを開発。',
     client: '障害福祉サービス事業所',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
+    imageUrl: '/works/nanairo.jpg'
   },
   {
     title: '商工会議所・商工会でのセミナー実績',
     category: 'Seminar',
-    description: '中小企業の経営者や担当者を対象に、AI活用やDX推進をテーマとしたセミナーを多数実施。実務に即した具体的な手法を解説。',
+    description: '大阪商工会議所をはじめ、全国50ヶ所以上の商工会議所・商工会にて、中小企業の経営者や担当者を対象にAI活用やDX推進をテーマとしたセミナーを多数実施。実務に即した具体的な手法を解説。',
     client: '全国各地の商工会議所・商工会',
-    imageUrl: 'https://images.unsplash.com/photo-1475721027187-402ad2989a3b?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: '/works/shokokai_new.jpg'
   },
   {
-    title: '株式会社サンワ 社員研修',
+    title: '社員研修',
     category: 'Training',
     description: '組織全体のデジタルリテラシー底上げのため、AI活用を中心とした全社的な社員研修プログラムを提供。',
     client: '株式会社サンワ',
-    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'
+    imageUrl: '/works/training1_new.jpg'
   },
   {
     title: '大阪デザイン＆テクノロジー専門学校 AI講師',
     category: 'Education',
     description: '次世代のクリエイターやエンジニアを目指す学生に向け、実務で使えるAI技術の講義を担当。',
     client: '大阪デザイン＆テクノロジー専門学校',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop'
+    imageUrl: '/works/oca_new.jpg'
   }
 ]
 

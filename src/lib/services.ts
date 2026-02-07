@@ -31,7 +31,7 @@ export const services = {
       {
         title: 'なないろサーカス団（就労継続支援B型）',
         description: '障害福祉現場の業務負担を軽減するため、日報作成や利用者の体調管理をAIで自動化・可視化する専用アプリを開発。現場スタッフが支援に集中できる環境を構築。',
-        image: '/works/LMS.png'
+        image: '/works/nanairo.jpg'
       }
     ]
   },
@@ -58,12 +58,12 @@ export const services = {
       {
         title: '【自社運営】\n介護施設向けラーニングマネジメントシステム（LMS）',
         description: 'インストラクショナルデザイン（教育工学）に基づき、形骸化しがちな法定研修の学習効果を最大化。年間の研修計画作成から受講状況のリアルタイム管理、監査時に必要な修了証明書の発行まで自動化し、施設運営者の事務負担を大幅に軽減します。',
-        image: '/works/LMS.png'
+        image: '/works/LMS_new.png'
       },
       {
         title: '【自社運営】\nサーフィン波予報アプリ',
         description: '天候、水温、風向き、波の高さや向きを精密に予測。複雑な気象データアルゴリズムを解析し、リアルタイムで海の状況を可視化。高度なデータ処理技術と、サーファーのニーズに応える直感的なUI設計を両立しています。',
-        image: '/works/tokyoU.png'
+        image: '/services/surfapp.png'
       }
     ]
   },
