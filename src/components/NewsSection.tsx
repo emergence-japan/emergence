@@ -5,22 +5,10 @@ import { motion } from 'framer-motion'
 const newsData = [
   {
     id: 1,
-    date: '2026.02.05',
-    category: 'Information',
-    title: 'Emergence-Japan LLC のコーポレートサイトを公開いたしました。',
-  },
-  {
-    id: 2,
-    date: '2026.01.20',
-    category: 'Service',
-    title: '次世代AIソリューション「Emergence AI」のベータ版提供を開始しました。',
-  },
-  {
-    id: 3,
-    date: '2026.01.10',
-    category: 'Release',
-    title: '資本提携および事業拡大のお知らせ',
-  },
+    date: '2025.10.01',
+    category: 'Publication',
+    title: '代表の浜田陽介が「すぐ動けない人のための思考を放つ100項（明日香出版社）」を上梓しました。',
+  }
 ]
 
 const NewsSection = () => {
