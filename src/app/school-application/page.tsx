@@ -35,13 +35,8 @@ export default function SchoolApplicationPage() {
   }, [errors, isSubmitted])
 
   const onSubmit = async (data: SchoolApplicationData) => {
-    const endpoint = process.env.NEXT_PUBLIC_SCHOOL_FORM_ENDPOINT || process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
-    
-    if (!endpoint || endpoint.includes('xxxx')) {
-      console.error('GAS Endpoint not configured.')
-      alert('システム設定エラー：申し込みフォームのエンドポイントが設定されていません。お手数ですが info@emergence-japan.com までご連絡ください。')
-      return
-    }
+    // Vercel設定の問題を回避するため、URLを直接指定
+    const endpoint = "https://script.google.com/macros/s/AKfycbwHDF2tfIcniL9qDKT_7-oF8tJmuI1ezOhZLgAWoFfdgRrHHrVPP6FrHRSnEHgYWN3A/exec"
 
     setIsSubmitting(true)
     setSelectedPayment(data.paymentMethod)

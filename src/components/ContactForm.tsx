@@ -29,7 +29,8 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
   }
 
   const onSubmit = async (data: ContactFormData) => {
-    const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
+    // Vercel設定の問題を回避するため、URLを直接指定
+    const endpoint = "https://script.google.com/macros/s/AKfycbyJCGtynJrhnjEBOG1dtzHFvk_FEreGFaRrqGTvfmWbXvqp-r3Vs6bwJHr7RjgbHozU/exec"
     
     console.log('--- フォーム送信開始 ---')
     console.log('宛先URL:', endpoint)
