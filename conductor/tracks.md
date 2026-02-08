@@ -22,6 +22,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+- [x] **Track: 運用安定化 ＆ コンテンツ拡充（2026/02/07）**
+  *Link: [./conductor/tracks/operation_stability_20260207/](./conductor/tracks/operation_stability_20260207/)*
+
 - [x] **Track: スクール申し込みシステム構築 ＆ UI/UX極限ブラッシュアップ（2026/02/06）**
   *Link: [./conductor/tracks/school_application_and_ui_polish_20260206/](./conductor/tracks/school_application_and_ui_polish_20260206/)*
 
