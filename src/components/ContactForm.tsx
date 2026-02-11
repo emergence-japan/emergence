@@ -29,36 +29,28 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
   }
 
   const onSubmit = async (data: ContactFormData) => {
-    // Vercel設定の問題を回避するため、URLを直接指定
-    const endpoint = "https://script.google.com/macros/s/AKfycbyJCGtynJrhnjEBOG1dtzHFvk_FEreGFaRrqGTvfmWbXvqp-r3Vs6bwJHr7RjgbHozU/exec"
-    
     console.log('--- フォーム送信開始 ---')
-    console.log('宛先URL:', endpoint)
+    console.log('送信先: /api/contact')
     console.log('送信データ:', data)
-
-    if (!endpoint || endpoint.includes('xxxx')) {
-      console.error('GAS Endpoint not configured.')
-      alert('システム設定エラー：お問い合わせフォームのエンドポイントが設定されていません。管理者にお問い合わせください。')
-      return
-    }
 
     setIsSubmitting(true)
     
     try {
-      const params = new URLSearchParams()
-      Object.entries(data).forEach(([key, value]) => {
-        params.append(key, value as string)
-      })
-
-      console.log('送信パラメータ:', params.toString())
-
-      await fetch(endpoint, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        mode: 'no-cors',
-        body: params, // URLSearchParamsをそのまま渡すとブラウザが自動でContent-Typeを設定します
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       })
       
-      console.log('fetch完了（no-corsモードのためレスポンス詳細は不明）')
+      const result = await response.json()
+      
+      if (!response.ok || result.status !== 'success') {
+        throw new Error(result.error || 'Submission failed')
+      }
+
+      console.log('送信成功')
       setIsSubmitting(false)
       setSubmitted(true)
       if (onSuccess) onSuccess()
