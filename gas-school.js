@@ -30,30 +30,41 @@ function doPost(e) {
     var sourceMap = { sns: 'SNS', referral: '紹介', seminar: 'セミナー', other: 'その他' };
     var paymentMap = { bank: '銀行振込', paypal: 'PayPal' };
 
-    // スプレッドシートに追記（空行を挿入せず、一番下に追加）
-    sheet.appendRow([
-      new Date(),
-      p.name,
-      p.email,
-      p.phone || '-',
-      ageMap[p.ageRange] || p.ageRange || "",
-      occupationMap[p.occupation] || p.occupation || "",
-      aiLevelMap[p.aiLevel] || p.aiLevel || "",
-      goalMap[p.goal] || p.goal || "",
-      sourceMap[p.source] || p.source || "",
-      paymentMap[p.paymentMethod] || p.paymentMethod || ""
-    ]);
+    // 1. スプレッドシートに追記（最優先：データ損失を防ぐ）
+    try {
+      sheet.appendRow([
+        new Date(),
+        p.name,
+        p.email,
+        p.phone || '-',
+        ageMap[p.ageRange] || p.ageRange || "",
+        occupationMap[p.occupation] || p.occupation || "",
+        aiLevelMap[p.aiLevel] || p.aiLevel || "",
+        goalMap[p.goal] || p.goal || "",
+        sourceMap[p.source] || p.source || "",
+        paymentMap[p.paymentMethod] || p.paymentMethod || ""
+      ]);
+    } catch (e) {
+      console.error("Spreadsheet Error: " + e.toString());
+      // スプレッドシート失敗は重大なので、ここはエラーを投げてフロントに通知させる
+      throw new Error("スプレッドシートへの記録に失敗しました: " + e.toString());
+    }
     
-    // 管理者通知
-    var adminEmail = "info@emergence-japan.com";
-    var adminSubject = "【スクール申込】" + p.name + "様よりお申し込み";
-    var adminBody = "生成AIブートキャンプへのお申し込みがありました。\n\n" + JSON.stringify(p, null, 2);
-    GmailApp.sendEmail(adminEmail, adminSubject, adminBody);
+    // 2. 管理者通知（失敗してもユーザーへの自動返信は試みる）
+    try {
+      var adminEmail = "info@emergence-japan.com";
+      var adminSubject = "【スクール申込】" + p.name + "様よりお申し込み";
+      var adminBody = "生成AIブートキャンプへのお申し込みがありました。\n\n" + JSON.stringify(p, null, 2);
+      GmailApp.sendEmail(adminEmail, adminSubject, adminBody);
+    } catch (e) {
+      console.error("Admin Email Error: " + e.toString());
+    }
     
-    // 【ユーザー宛・自動返信メール】
+    // 3. ユーザー宛・自動返信メール（失敗しても管理者にログは残っている）
     if (p.email) {
-      var userSubject = "【生成AIブートキャンプ】参加お申し込みありがとうございます";
-      var userBody = p.name + "さん" + `
+      try {
+        var userSubject = "【生成AIブートキャンプ】参加お申し込みありがとうございます";
+        var userBody = p.name + "さん" + `
 
 
 生成ＡＩブートキャンプに
@@ -134,7 +145,10 @@ WindowsでもMacでも問題ございません
 浜田陽介
 ----------------------------------`;
 
-      GmailApp.sendEmail(p.email, userSubject, userBody);
+        GmailApp.sendEmail(p.email, userSubject, userBody);
+      } catch (e) {
+        console.error("User Email Error: " + e.toString());
+      }
     }
 
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))

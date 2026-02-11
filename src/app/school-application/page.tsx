@@ -35,33 +35,34 @@ export default function SchoolApplicationPage() {
   }, [errors, isSubmitted])
 
   const onSubmit = async (data: SchoolApplicationData) => {
-    // Vercel設定の問題を回避するため、URLを直接指定
-    const endpoint = "https://script.google.com/macros/s/AKfycbwHDF2tfIcniL9qDKT_7-oF8tJmuI1ezOhZLgAWoFfdgRrHHrVPP6FrHRSnEHgYWN3A/exec"
-
     setIsSubmitting(true)
     setSelectedPayment(data.paymentMethod)
     try {
-      // GASに確実にデータを届けるためのフォーム形式
-      const params = new URLSearchParams()
-      Object.entries(data).forEach(([key, value]) => {
-        params.append(key, value as string)
-      })
-      params.append('type', 'school_application')
-
-      await fetch(endpoint, {
+      const response = await fetch('/api/school-application', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: params.toString(),
+        body: JSON.stringify({
+          ...data,
+          type: 'school_application'
+        }),
       })
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit')
+      }
+
+      const result = await response.json()
+      if (result.status !== 'success') {
+        throw new Error(result.error || 'Unknown error')
+      }
       
       setSubmitted(true)
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } catch (error) {
       console.error('Submission failed:', error)
-      alert('送信に失敗しました。お手数ですが、info@emergence-japan.com まで直接ご連絡ください。')
+      alert('送信に失敗しました。お手数ですが、しばらく時間を置いてから再度お試しいただくか、info@emergence-japan.com まで直接ご連絡ください。')
     } finally {
       setIsSubmitting(false)
     }
