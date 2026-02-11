@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwHDF2tfIcniL9qDKT_7-oF8tJmuI1ezOhZLgAWoFfdgRrHHrVPP6FrHRSnEHgYWN3A/exec";
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx52acHalgZJcykRFcjn87nPW056hIQ73fAtqnradQKeq2RwHrUsPWm1WPL8uWf0PAq5g/exec";
 
 export async function POST(request: Request) {
   try {
