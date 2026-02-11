@@ -50,11 +50,25 @@ function doPost(e) {
       throw new Error("スプレッドシートへの記録に失敗しました: " + e.toString());
     }
     
-    // 2. 管理者通知（失敗してもユーザーへの自動返信は試みる）
+    // 2. 管理者通知（日本語で読みやすく整形・失敗してもユーザーへの自動返信は試みる）
     try {
       var adminEmail = "info@emergence-japan.com";
-      var adminSubject = "【スクール申込】" + p.name + "様よりお申し込み";
-      var adminBody = "生成AIブートキャンプへのお申し込みがありました。\n\n" + JSON.stringify(p, null, 2);
+      var adminSubject = "【★重要：スクール申込】" + p.name + "様より";
+      
+      var adminBody = "生成AIブートキャンプへのお申し込みがありました。\n\n" +
+                      "----------------------------------\n" +
+                      "【お名前】: " + p.name + "\n" +
+                      "【メール】: " + p.email + "\n" +
+                      "【電話番号】: " + (p.phone || '-') + "\n" +
+                      "【年代】: " + (ageMap[p.ageRange] || p.ageRange || "") + "\n" +
+                      "【職業】: " + (occupationMap[p.occupation] || p.occupation || "") + "\n" +
+                      "【AIレベル】: " + (aiLevelMap[p.aiLevel] || p.aiLevel || "") + "\n" +
+                      "【学習目的】: " + (goalMap[p.goal] || p.goal || "") + "\n" +
+                      "【きっかけ】: " + (sourceMap[p.source] || p.source || "") + "\n" +
+                      "【支払方法】: " + (paymentMap[p.paymentMethod] || p.paymentMethod || "") + "\n" +
+                      "----------------------------------\n\n" +
+                      "スプレッドシートで詳細を確認してください。";
+
       GmailApp.sendEmail(adminEmail, adminSubject, adminBody);
     } catch (e) {
       console.error("Admin Email Error: " + e.toString());
