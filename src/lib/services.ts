@@ -111,14 +111,15 @@ export const services = {
         ],
         price: '340,000円（税込）/ 1名様',
         note: '※人材開発支援助成金（事業展開等リスキリング支援コース）対象。詳しくはお問い合わせください。',
+        lecturer: {
+          name: '浜田 陽介',
+          role: 'エマージェンス・ジャパン合同会社 代表',
+          image: '/bootcamp/hamada2.jpg'
+        },
         images: [
-          'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1454165833767-02a6ed8a587a?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1000'
+          '/works/training1_new.jpg',
+          '/works/shokokai_new.jpg',
+          '/works/oca_new.jpg'
         ]
       },
       {
@@ -141,14 +142,15 @@ export const services = {
         ],
         price: '340,000円（税込）/ 1名様',
         note: '※人材開発支援助成金（事業展開等リスキリング支援コース）対象。詳しくはお問い合わせください。',
+        lecturer: {
+          name: '浜田 陽介',
+          role: 'エマージェンス・ジャパン合同会社 代表',
+          image: '/bootcamp/hamada2.jpg'
+        },
         images: [
-          'https://images.unsplash.com/photo-1555066931-4365d14df8ca?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1558494949-ef010ca73324?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1518433278981-167b128ee73f?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000'
+          '/works/kougi.jpg',
+          '/works/IMG_8381.jpg',
+          '/works/IMG_7537.jpg'
         ]
       },
       {
@@ -171,14 +173,15 @@ export const services = {
         ],
         price: '340,000円（税込）/ 1名様',
         note: '',
+        lecturer: {
+          name: '浜田 陽介',
+          role: 'エマージェンス・ジャパン合同会社 代表',
+          image: '/bootcamp/hamada2.jpg'
+        },
         images: [
-          'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000',
-          'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000'
+          '/works/IMG_7032.jpg',
+          '/works/IMG_7072.jpg',
+          '/works/IMG_7486.jpg'
         ]
       }
     ],
@@ -356,18 +359,22 @@ export type ServiceData = {
   benefits?: string[];
   benefitsTitle?: string;
   caseStudies?: { title: string; description: string; image: string; }[];
-  programs?: {
-    id: string;
-    name: string;
-    tag: string;
-    duration: string;
-    overview: string;
-    curriculum: { step: string; title: string; detail: string; }[];
-    price: string;
-    note: string;
-    images?: string[];
-  }[];
-  voices?: { name: string; content: string; }[];
+      programs?: {
+      id: string;
+      name: string;
+      tag: string;
+      duration: string;
+      overview: string;
+      curriculum: { step: string; title: string; detail: string; }[];
+      price: string;
+      note: string;
+      images?: string[];
+      lecturer?: {
+        name: string;
+        role: string;
+        image?: string;
+      };
+    }[];  voices?: { name: string; content: string; }[];
   bannerImage?: string;
   logoImage?: string;
   discordInfo?: {

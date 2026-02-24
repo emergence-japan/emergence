@@ -416,6 +416,32 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
                       <div className="text-2xl font-bold text-white mb-2">{program.price}</div>
                       <p className="text-sm text-gray-400 leading-relaxed">{program.note}</p>
                       <Link href="/#contact" className="mt-8 flex items-center justify-center w-full py-4 rounded-xl bg-white text-black font-bold hover:bg-accent transition-all shadow-lg">相談する</Link>
+                      
+                      {program.lecturer && (
+                        <div className="mt-10 pt-10 border-t border-white/10">
+                          <h3 className="text-sm font-bold mb-6 text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                            <User size={16} /> 講師紹介
+                          </h3>
+                          <div className="flex items-center gap-4">
+                            {program.lecturer.image && (
+                              <div className="w-16 h-16 rounded-full overflow-hidden border border-white/10 shrink-0 shadow-lg bg-white/5">
+                                <img 
+                                  src={program.lecturer.image} 
+                                  alt={program.lecturer.name} 
+                                  className="w-full h-full object-cover object-top scale-125 origin-top" 
+                                />
+                              </div>
+                            )}
+                            <div>
+                              <p className="text-white font-bold text-lg leading-tight">{program.lecturer.name}</p>
+                              <p className="text-accent text-xs font-medium mt-1">{program.lecturer.role}</p>
+                            </div>
+                          </div>
+                          <p className="mt-6 text-sm text-gray-400 leading-relaxed">
+                            「確実に身につく指導法」で、これまで一度も挫折者を出したことがありません。技術の習得だけでなく、それをどう実務に活かすかという本質をお伝えします。
+                          </p>
+                        </div>
+                      )}
                     </div>
                     {program.images && (
                       <div className="mt-8 grid grid-cols-2 gap-4">
