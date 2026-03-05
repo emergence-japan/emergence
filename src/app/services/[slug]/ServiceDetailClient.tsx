@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowLeft, CheckCircle2, HelpCircle, BookOpen, Newspaper, Mail, TrendingUp, Users, Sparkles, Briefcase, Clock, Tag, MessageSquare, User, ChevronDown } from 'lucide-react'
+import { ArrowLeft, CheckCircle2, HelpCircle, BookOpen, Newspaper, Mail, TrendingUp, Users, Sparkles, Briefcase, Clock, Tag, MessageSquare, User, ChevronDown, Monitor } from 'lucide-react'
 import { ServiceData } from '@/lib/services'
 
 export default function ServiceDetailClient({ service }: { service: ServiceData }) {
@@ -392,6 +392,9 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <span className="px-4 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-bold">{program.tag}</span>
                   <div className="flex items-center gap-2 text-gray-400 text-sm font-mono"><Clock size={16} />{program.duration}</div>
+                  {program.format && (
+                    <div className="flex items-center gap-2 text-gray-400 text-sm font-mono border-l border-white/10 pl-4 ml-2"><Monitor size={16} />{program.format}</div>
+                  )}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">{program.name}</h2>
                 <p className="text-xl mb-12 max-w-4xl leading-relaxed text-gray-300">{program.overview}</p>

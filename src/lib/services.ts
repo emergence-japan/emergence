@@ -395,6 +395,7 @@ export type ServiceData = {
       name: string;
       tag: string;
       duration: string;
+      format?: string;
       overview: string;
       curriculum: { step: string; title: string; detail: string; }[];
       price: string;
