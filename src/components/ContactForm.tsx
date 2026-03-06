@@ -23,16 +23,7 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
     resolver: zodResolver(contactSchema)
   })
 
-  // バリデーションエラーを監視
-  if (Object.keys(errors).length > 0) {
-    console.log('入力エラーあり:', errors)
-  }
-
   const onSubmit = async (data: ContactFormData) => {
-    console.log('--- フォーム送信開始 ---')
-    console.log('送信先: /api/contact')
-    console.log('送信データ:', data)
-
     setIsSubmitting(true)
     
     try {
@@ -50,7 +41,6 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
         throw new Error(result.error || 'Submission failed')
       }
 
-      console.log('送信成功')
       setIsSubmitting(false)
       setSubmitted(true)
       if (onSuccess) onSuccess()
