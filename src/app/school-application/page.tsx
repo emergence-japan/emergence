@@ -68,6 +68,45 @@ export default function SchoolApplicationPage() {
     }
   }
 
+  const isApplicationPaused = true
+
+  if (isApplicationPaused) {
+    return (
+      <div className="min-h-screen bg-[#0a0a0a] text-white py-20 flex items-center relative overflow-hidden">
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute bottom-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-orange-600/20 rounded-full blur-[150px] opacity-60" />
+          <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[120px] opacity-40" />
+        </div>
+
+        <div className="container mx-auto px-4 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center"
+          >
+            <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-10 border border-white/10">
+              <AlertCircle className="text-orange-400" size={48} />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
+              現在募集を一時停止中です
+            </h1>
+            <p className="text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto mb-16">
+              生成AIブートキャンプは現在、新規募集を一時停止しております。<br />
+              再開の際は本サイトにてお知らせいたしますので、今しばらくお待ちください。
+            </p>
+            <Link
+              href="/services/school"
+              className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-gray-400 hover:text-orange-400 transition-colors"
+            >
+              <ExternalLink size={16} />
+              サービス詳細ページへ戻る
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    )
+  }
+
   if (submitted) {
     return (
       <div className="min-h-screen bg-[#0a0a0a] text-white py-20 flex items-center relative overflow-hidden">

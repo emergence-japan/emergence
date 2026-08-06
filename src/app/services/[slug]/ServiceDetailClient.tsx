@@ -72,9 +72,9 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
             </h1>
             {isSchool && (
               <div className="shrink-0 mt-4 md:mt-2">
-                <Link href="/school-application" className="relative z-50 inline-flex items-center gap-3 px-8 py-3.5 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_10px_30px_rgba(234,88,12,0.3)] text-base md:text-lg">
-                  {service.cta || 'コミュニティに参加する'}
-                </Link>
+                <span className="inline-flex items-center gap-3 px-8 py-3.5 bg-white/10 text-gray-400 font-bold rounded-full cursor-not-allowed text-base md:text-lg">
+                  現在募集を一時停止中
+                </span>
               </div>
             )}
           </motion.div>
@@ -641,19 +641,25 @@ export default function ServiceDetailClient({ service }: { service: ServiceData 
             {service.cta ? service.cta : '理想を現実に変える一歩を'}
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            {isPublishing 
+            {isPublishing
               ? '書籍の執筆依頼、雑誌への寄稿、連載、または講演のご依頼など、多角的な視点からのアウトプットを通じて、貴社のプロジェクトに貢献いたします。お気軽にご相談ください。'
               : isSchool
-              ? 'AIの波に乗り、あなたの可能性を最大限に引き出す準備はできていますか？同じ志を持つ仲間と共に、新しい時代のスキルを身につけましょう。'
+              ? '現在、新規募集を一時停止しております。再開の際は本ページにてお知らせいたします。'
               : '貴社の課題や個人の目標に合わせ、最適なソリューションをオーダーメイドでご提案いたします。まずはお気軽にご相談ください。'
             }
           </p>
-          <Link 
-            href={isSchool ? "/school-application" : "/#contact"} 
-            className="relative z-50 inline-flex items-center gap-4 px-16 py-6 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_20px_50px_rgba(234,88,12,0.4)] text-2xl"
-          >
-            {service.cta ? service.cta : '無料で相談を始める'}
-          </Link>
+          {isSchool ? (
+            <span className="inline-flex items-center gap-4 px-16 py-6 bg-white/10 text-gray-400 font-bold rounded-full cursor-not-allowed text-2xl">
+              現在募集を一時停止中
+            </span>
+          ) : (
+            <Link
+              href="/#contact"
+              className="relative z-50 inline-flex items-center gap-4 px-16 py-6 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 hover:scale-105 transition-all shadow-[0_20px_50px_rgba(234,88,12,0.4)] text-2xl"
+            >
+              {service.cta ? service.cta : '無料で相談を始める'}
+            </Link>
+          )}
         </motion.div>
       </div>
     </div>
