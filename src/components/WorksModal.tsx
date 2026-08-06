@@ -9,7 +9,7 @@ interface Work {
   title: string
   category: string
   description: string
-  client: string
+  client: string[]
   imageUrl: string
 }
 
@@ -93,10 +93,19 @@ const WorksModal = ({ isOpen, work, onClose }: WorksModalProps) => {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Client</h4>
-                    <p className="text-white font-medium">
-                      {work.client}
-                    </p>
+                    <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">
+                      Client{work.client.length > 1 ? ` (${work.client.length}社)` : ''}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {work.client.map((name) => (
+                        <span
+                          key={name}
+                          className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-white"
+                        >
+                          {name}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

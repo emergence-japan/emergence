@@ -6,7 +6,7 @@ describe('WorksModal', () => {
     title: 'Test Project',
     category: 'Development',
     description: 'Detailed description of the test project.',
-    client: 'Test Client',
+    client: ['Test Client'],
     imageUrl: '/test-image.jpg'
   }
 
